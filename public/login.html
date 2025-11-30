@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Pharmacy Management System</title>
+    <link rel="stylesheet" href="css/auth.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="auth-container">
+        <div class="auth-card">
+            <div class="auth-header">
+                <div class="logo">
+                    <span class="logo-icon">💊</span>
+                    <h1>Pharmacy System</h1>
+                </div>
+                <p class="subtitle">Sign in to your account</p>
+            </div>
+
+            <form id="loginForm" class="auth-form">
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" required placeholder="Enter your email">
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" required placeholder="Enter your password">
+                </div>
+
+                <button type="submit" class="btn btn-primary">
+                    <span id="loginText">Sign In</span>
+                    <span id="loginLoader" class="loader" style="display: none;"></span>
+                </button>
+            </form>
+
+            <div class="auth-footer">
+                <p>Don't have an account? <a href="signup.html">Sign up</a></p>
+            </div>
+
+            <div class="demo-credentials">
+                <p class="demo-title">Demo Credentials:</p>
+                <div class="demo-grid">
+                    <div class="demo-item">
+                        <strong>Admin:</strong>
+                        <span>admin@pharmacy.com / password123</span>
+                    </div>
+                    <div class="demo-item">
+                        <strong>Pharmacist:</strong>
+                        <span>pharmacist@pharmacy.com / password123</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="particles">
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast"></div>
+
+    <script src="js/auth.js"></script>
+</body>
+
+</html>
