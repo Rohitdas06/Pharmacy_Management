@@ -88,7 +88,23 @@ router.post('/login', async (req, res) => {
         const user = users[0];
 
         // Check password
-        const isValidPassword = await bcrypt.compare(password, user.password);
+        // Handle invalid password hash format
+        if (!user.password || !user.password.startsWith('$2')) {
+            console.error('Invalid password hash format for user:', user.email);
+            return res.status(500).json({ 
+                error: 'Account error. Please contact administrator or use password reset.' 
+            });
+        }
+
+        let isValidPassword = false;
+        try {
+            isValidPassword = await bcrypt.compare(password, user.password);
+        } catch (bcryptError) {
+            console.error('Password comparison error:', bcryptError);
+            return res.status(500).json({ 
+                error: 'Authentication error. Please try again or contact support.' 
+            });
+        }
 
         if (!isValidPassword) {
             return res.status(401).json({ error: 'Invalid email or password' });

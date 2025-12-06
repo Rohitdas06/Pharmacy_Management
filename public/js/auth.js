@@ -1,5 +1,5 @@
 // API Base URL
-const API_URL = 'http://localhost:3000/api/auth';
+const API_URL = 'http://localhost:3001/api/auth';
 
 // DOM Elements
 const loginForm = document.getElementById('loginForm');

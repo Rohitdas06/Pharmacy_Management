@@ -84,9 +84,12 @@ INSERT INTO prescriptions (patient_id, medicine_id, quantity, date) VALUES
 (1, 4, 5, '2024-11-27'),
 (3, 2, 15, '2024-11-28');
 
--- Sample Users (password for all is 'password123')
--- Password hash generated using bcrypt with salt rounds 10
+-- Sample Users
+-- NOTE: Password hashes must be generated using bcrypt
+-- After importing this schema, run: node update-passwords.js
+-- Or register new users through the signup page
+-- Default credentials: admin@pharmacy.com / password123 or pharmacist@pharmacy.com / password123
 INSERT INTO users (username, email, password, role) VALUES
-('admin', 'admin@pharmacy.com', '$2a$10$rQZ5YJ5YJ5YJ5YJ5YJ5YJuO8K8K8K8K8K8K8K8K8K8K8K8K8K8K8K', 'admin'),
-('pharmacist', 'pharmacist@pharmacy.com', '$2a$10$rQZ5YJ5YJ5YJ5YJ5YJ5YJuO8K8K8K8K8K8K8K8K8K8K8K8K8K8K8K', 'pharmacist');
+('admin', 'admin@pharmacy.com', '$2b$10$Ms8szH8XRdt5dHFwpu4KVuA130DmyIr558GQRiuE/YL83igqlRQMW', 'admin'),
+('pharmacist', 'pharmacist@pharmacy.com', '$2b$10$Ms8szH8XRdt5dHFwpu4KVuA130DmyIr558GQRiuE/YL83igqlRQMW', 'pharmacist');
 
